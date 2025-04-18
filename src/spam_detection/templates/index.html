@@ -1,0 +1,104 @@
+
+{% extends 'base.html' %}
+
+ {% load static %}
+{% block content %}
+
+    <div class="container-fluid header-div">
+        <div class="header" >
+            <div class=" me-5 py-5">
+                <div class="container">
+                    <div class="row py-5">
+                        <div class="col-lg-8 py-5">
+                            <h2 class="text-light py-5">
+                                Welcome to Mailspm!
+                            </h2>
+                            <h1>
+                                check whether your <br> messages are spam 
+                            </h1>
+                            <div class="text-start mt-5">
+                                <a href="#check_spam" class="btn btn-warning btn-lg">Check Now</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 py-5">
+                            <img src="{% static 'images/spam.png' %}" alt="" class="img-fluid d-block mx-auto">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row form-section">
+              
+                <div class="col-lg-10 mx-auto py-5">
+
+                    {% if prediction %}
+                        <!-- ===============Dispaly result ==============-->
+                        <div class="result-section mt-5">
+                            <h2 class="mt-4">Prediction Result</h2>
+                            {% if prediction == 'Spam' %}
+                                <p class="text-danger fw-bold">{{prediction}}</p>
+                            {% else %}
+                                <p class="text-primary fw-bold">{{prediction}}</p>
+                            {% endif %}
+                           
+                        </div>
+                    {% else %}
+
+                        <div class="form-section">
+                            <h1 class="text-center text-dark text-uppercase" id="check_spam">
+                                Check Spam
+                            </h1>
+                            <p class="text-center text-muted mb-5">
+                                Enter your message and click on check spam
+                            </p>
+                            <div class="form">
+                                <form action="{% url "predict_spam" %}" method="post">
+                                    {% csrf_token %}
+                                    <div class="mb-3">
+                                        <textarea class="form-control" name="email_content" rows="10"></textarea>
+                                    </div>
+
+                                    {% for field in form %}
+                                        {% for error in field.errors %}
+                                            <span class="text-danger me-4">{{field.name}} : {{error}}</span>
+                                        {% endfor %}
+                                    {% endfor %}
+        
+                                    <div class="text-center mt-5">
+                                        <button class="btn btn-warning btn-lg" type="submit" >Check Spam</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    {% endif %}
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-10 mx-auto py-5">
+                    <h1 class="text-center text-dark text-uppercase" id="about">
+                        About MailSpam
+                    </h1>
+                    <p class="text-center text-muted mb-5">
+                        This application is using machine learning to classify email into spam or not spam.
+                        By following these precautions, you can reduce the risk of falling victim to email spam 
+                        and protect your personal information and digital security. Always stay vigilant and exercise 
+                        caution when dealing with unsolicited emails.
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+
+
+ 
+
+    </div>
+
+{% endblock content %}
+
+

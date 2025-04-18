@@ -1,0 +1,106 @@
+
+body{
+    margin: 0;
+    border: 0;
+    background-color: #fff;
+}
+.container-fluid{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.btn{
+    border-radius: 0 !important;
+    padding: 20px 20px;
+}
+.btn-warning{
+    background-color: #ffb907 !important;
+    margin-right: 20px;
+}
+.navbar .navbar-brand{
+    font-family: 'elephant';
+    font-size: 26px;
+    font-weight: bolder;
+    color: #fff !important;
+    text-transform: uppercase;
+}
+.navbar .navbar-brand span{
+    color: #ffb907;
+}
+.navbar .nav-link{
+    font-family: 'serif' !important;
+    text-transform: uppercase;
+    font-size: 16px !important;
+    color: #ffb907 !important;
+    margin-right: 20px;
+    font-weight: 500 !important;
+}
+
+.navbar .nav-link:hover{
+    color: #000 !important;
+    background-color: #fefefe;
+    border-radius: 3px;
+}
+.header{
+    margin: 0px !important;
+    padding: 0px !important;
+    min-height: 500px;
+    background: url("/static/images/banner1.jpg");        
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(59, 59, 70);
+    background-blend-mode: overlay !important;
+}
+
+.header-div{
+    padding: 0;
+}
+
+.content{
+    min-height: 100vh;
+    height: 100%;
+}
+.header h2{
+    font-style: italic;
+    font-weight: bold;
+    color: #ffb907 !important;
+}
+.header h1{
+    color: #fff !important;
+    font-weight: bold;
+    /* text-align: center; */
+    text-transform: uppercase;
+}
+.form .form-control{
+    border: 1px solid  #ffb907 !important;
+    background-color: #f6f6f6 !important;
+}
+.form .form-control:focus{
+    box-shadow: 0 0 5px rgba(255, 185, 7, 0.8) !important;
+}
+.result-section h2{
+    text-align: center;
+    color: #212529bf;
+    font-style: italic;
+}
+.result-section p{
+    font-size: 25px;
+    font-style: italic;
+    text-align: center;
+    padding: 30px 30px !important;
+    margin-top: 20px;
+    border-radius: 8px;
+    font-weight: 600px !important;
+    background-color: #f6f6f6 !important;
+    border: 1px solid #ffb907;
+}
+.navbar-scrolled {
+    background-color: #054471 !important;
+}
+.footer{
+    color: rgb(26, 6, 75);
+    background-color: #f5f5f5 !important;
+    padding: 55px 35px !important;
+}
+ 
+
+
